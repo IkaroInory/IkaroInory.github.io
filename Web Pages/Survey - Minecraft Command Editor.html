@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Survey - Minecraft Command Editor</title>
+
+        <script type="text/javascript">
+            var background = [];
+            background[0] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4364.JPG";
+            background[1] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4365.JPG";
+            background[2] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4366.JPG";
+            background[3] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4367.JPG";
+            background[4] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4368.JPG";
+
+            var randomIndex = Math.round(Math.random() * 4);
+            document.write("<style>body{background-image:url(" + background[randomIndex] + ")}</style>");
+        </script>
+
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            body {
+                
+                margin-left: 590px;
+                margin-right: 590px;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                font-family: "Roboto", sans-serif;
+                font-size: 20px;
+                color: white;
+            }
+            h1 {
+                text-transform: capitalize;
+            }
+            form {
+                margin: 40px 40px 40px 40px;
+            }
+            div {
+                margin-bottom: 20px;
+                padding: 5px 5px 5px 5px;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: 400;
+            }
+            select {
+                width: max-content;
+                font-size: 20px;
+            }
+            button {
+                width: 100%;
+                height: 46px;
+                background-color: rgb(55, 175, 101);
+                border-style: none;
+            }
+            .div-title {
+                text-align: center;
+                margin-bottom: 0;
+            }
+            .textbox {
+                box-sizing: border-box;
+                width: 100%;
+                height: 38px;
+                font-size: 18px;
+                color: rgb(73, 80, 87);
+                border-style: none;
+                border-radius: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #dropdown {
+                width: 100%;
+                height: 38px;
+                font-size: 18px;
+                color: rgb(73, 80, 87);
+                border-radius: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #area-main {
+                background-color:rgba(238, 238, 238, 0.5);
+                padding-top: 40px;
+                padding-bottom: 40px;
+                padding-left: 40px;
+                padding-right: 40px;
+                border-radius: 10px;
+            }
+            #text-submit {
+                font-size: 20px;
+                font-family: "Roboto", sans-serif;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="div-title">
+            <h1 id="title">A survey on Minecraft Command Editor</h1>
+            <p id="description">Thank you for taking the time to help us improve the MCE.</p>
+        </div>
+        <div id="area-main">
+            <form id="survey-form">
+                <div>
+                    <label id="name-label" for="name">MoJang Account*</label>
+                    <input id="name" class="textbox" type="text"  placeholder="Enter your MoJang account" required>
+                </div>
+                <div>
+                    <label id="name-label" for="email">Email*</label>
+                    <input id="email" class="textbox" type="email"  placeholder="Enter your Email" required>
+                    <!--需求6：检测邮箱格式-->
+                </div>
+                <div>
+                    <label id="number-label" for="number">Age</label>
+                    <input id="number" class="textbox" type="number" placeholder="Enter your age" min=1 max=150>
+                    <!--需求6：检测是否为纯数字-->
+                    <!--需求6：检测数字范围-->
+                </div>
+                <div>
+                    <label>Where did you see MCE and download it? *</label>
+                    <select id="dropdown">
+                        <option disabled selected>Select an item</option>
+                        <option value="1">In forum</option>
+                        <option value="2">In search engines</option>
+                        <option value="3">Recommended by friend</option>
+                        <option value="4">Others</option>
+                    </select>
+                </div>
+                <div>
+                    <label>What do you think of MCE? *</label>
+                    <label>
+                        <input name="radio" type="radio">
+                        Very nice
+                    </label>
+                    <label>
+                        <input name="radio" type="radio">
+                        Good
+                    </label>
+                    <label>
+                        <input name="radio" type="radio">
+                        Ordinary
+                    </label>
+                    <label>
+                        <input name="radio" type="radio">
+                        Bad
+                    </label>
+                    <label>
+                        <input name="radio" type="radio">
+                        Terrible
+                    </label>
+                </div>
+                <div>
+                    <label>What features do you like about MCE? *</label>
+                    <label>
+                        <input name="checkbox" type="checkbox">
+                        All
+                    </label>
+                    <label>
+                        <input name="checkbox" type="checkbox">
+                        Command generation
+                    </label>
+                    <label>
+                        <input name="checkbox" type="checkbox">
+                        Command search
+                    </label>
+                    <label>
+                        <input name="checkbox" type="checkbox">
+                        History
+                    </label>
+                    <label>
+                        <input name="checkbox" type="checkbox">
+                        Database storage
+                    </label>
+                    <label>
+                        <input name="checkbox" type="checkbox">
+                        Offline operation
+                    </label>
+                    <label>
+                        <input name="checkbox" type="checkbox">
+                        None
+                    </label>
+                </div>
+                <div>
+                    <label>If you have anything else to say to the MCE project team, please write it in the below:</label>
+                    <textarea class="textbox" placeholder="Say something if you want" style="height: 100px;"></textarea>
+                </div>
+                <div>
+                    <button id="submit" type="submit"><span id="text-submit">Submit</span></button>
+                </div>
+            </form>
+        </div>
+    </body>
+
+    <footer style="text-align: center; font-size: 14px;">
+        © 2021 IkaroInory
+    </footer>
+</html>

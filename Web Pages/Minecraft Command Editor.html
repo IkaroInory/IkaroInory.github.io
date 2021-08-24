@@ -115,6 +115,14 @@
                 position: -webkit-sticky;
                 top: 0;
             }
+            #bar-signup {
+                background-color: rgb(55, 175, 101);
+
+                padding-top: 8px;
+                padding-bottom: 8px;
+
+                border-radius: 5px;
+            }
         </style>
     </head>
 
@@ -133,10 +141,9 @@
                             <a class="nav-link" href="#index-github"><i class="fa fa-github"></i> GitHub</a>
                         </nav>
                     </div>
-                    <!--需求5：当点击 nav 内的 .nav-link 按钮时，应滚动到产品主页上相应的部分。-->
                     <div id="div-account">
                         <nav id="nav-account">
-                            <a id="bar-signup" class="nav-link" href="#" style="background-color: rgb(55, 175, 101);padding-top: 8px;padding-bottom: 8px;">Sign Up</a>
+                            <a id="bar-signup" class="nav-link" href="#">Sign Up</a>
                             <a id="bar-login" class="nav-link" href="javascript:void(0)" onclick="openLogin()">Log In</a>
                         </nav>
                     </div>
@@ -266,6 +273,7 @@
         </style>
         
         <div id="div-login" style="display: none;">
+            <h2>Log In MCE Account</h2>
             <form id="form" action="https://www.freecodecamp.org/email-submit">
                 <div class="div-input">
                     <!--需求10：#email 输入框应使用 HTML5 验证来确认输入的内容是否为邮箱。-->

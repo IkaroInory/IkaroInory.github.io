@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Minecraft Command Editor</title>
+        <link rel="shortcut icon" href="https://raw.githubusercontent.com/IkaroInory/IkaroInory.github.io/main/Image%20Host/Minecraft%20Command%20Editor/wiki-icon.png" />
 
         <script type="text/javascript">
             var background = [];
@@ -15,26 +16,229 @@
             var randomIndex = Math.round(Math.random() * 4);
             document.write("<style>body{background-image:url(" + background[randomIndex] + ")}</style>");
         </script>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
         <style>
             body {
                 background-repeat: no-repeat;
                 background-attachment: fixed;
+                background-size: 1920px 1080px;
                 font-family: "Roboto", sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                margin: 0;
+            }
+            a{
+                text-decoration: none;
+            }
+            .nav-link {
+                color: white;
+                font-weight: 400;
+                height: 32px;
+                padding-left: 16px;
+                padding-right: 16px;
+                margin: -16px 0;
+            }
+            #header {
+                display: flex;
+                justify-content: space-between;
+                background-color: rgb(51, 51, 51);
+
+                width: auto;
+                height: 32px;
+
+                padding: 16px 32px;
+            }
+            #div-functions {
+                display: flex;
+                align-items: center;
+                height: 32px;
+            }
+            #header-img {
+                width: 32px;
+                height: 32px;
+            }
+            #nav-bar {
+                margin-left: 16px;
+            }
+            #div-account {
+                display: flex;
+                align-items: center;
+                height: 32px;
+            }
+            #div-container {
+                color: white;
+                font-weight: 400;
             }
         </style>
     </head>
 
     <body>
-        <div>
+        <div id="div-body">
             <header id="header">
-                <div id="block-header-icon">
-                    <img id="header-img" src="">
+                <div id="div-functions" style="height: 32px;">
+                    <img id="header-img" src="https://raw.githubusercontent.com/IkaroInory/IkaroInory.github.io/main/Image%20Host/Minecraft%20Command%20Editor/wiki-icon.png">
+                    <nav id="nav-bar">
+                        <a class="nav-link">Minecraft Command Editor</a>
+                        <a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a>
+                        <a class="nav-link" href="#"><i class="fa fa-flag"></i> Guide</a>
+                        <a class="nav-link" href="#index-download"><i class="fa fa-cloud-download"></i> Download</a>
+                        <a class="nav-link" href="#"><i class="fa fa-globe"></i> Language</a>
+                        <a class="nav-link" href="#index-github"><i class="fa fa-github"></i> GitHub</a>
+                    </nav>
+                </div>
+                <!--需求5：当点击 nav 内的 .nav-link 按钮时，应滚动到产品主页上相应的部分。-->
+                <div id="div-account">
+                    <nav id="nav-account">
+                        <a id="bar-signup" class="nav-link" href="#" style="background-color: rgb(55, 175, 101);padding-top: 8px;padding-bottom: 8px;">Sign Up</a>
+                        <a id="bar-login" class="nav-link" href="javascript:void(0)" onclick="openLogin()">Log In</a>
+                    </nav>
                 </div>
             </header>
+
+            
+            <script>
+                function openLogin(){
+                    document.getElementById("div-login").style.display = "block";
+                    return false;
+                }
+            </script>
+            
+
+            <style>
+                #section-welcome {
+                    text-align: center;
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+            </style>
+            <div id="div-container">
+                <h1 style="text-align: center;">Minecraft Command Editor</h1>
+                <section id="section-welcome">
+                    <p>Welcome to <strong>Minecraft Command Editor</strong> official website!</p>
+                    <p>The current page is under construction and some functions are not available yet. We will hurry to finish the website.</p>
+                    <p>Thank you for your support!</p>
+                </section>
+                <hr width="60%">
+                <h1 style="text-align: center;">What is MCE?</h1>
+                <section style="text-align: center;">
+                    <iframe id="video" src="" width="800" height="450"></iframe>
+                    <p>Minecraft Command Editor is a software dedicated to advanced editing of Minecraft commands, wrote by IkaroInory.</p>
+                    <p>At present, it is still updating.</p>
+                    <p>More functions will be introduced one after another.</p>
+                    <p>Please look forward to it!</p>
+                </section>
+                <hr width="60%">
+                <h1 id="index-download" style="text-align: center;">Download</h1>
+                <section style="text-align: center;">
+                    <p>If you want to learn more information about Minecraft Command Editor,</p>
+                    <p>please visit: <a href="http://www.mcbbs.net/thread-802231-1-1.html" target="_blank">www.mcbbs.net</a></p>
+                </section>
+                <hr width="60%">
+                <h1 id="index-github" style="text-align: center;">GitHub Repositories</h1>
+                <section style="text-align: center;">
+                    <p>Since version 3.0, MCE has started to open source code</p>
+                    <p>and hosted it in the GitHub repositoriesfor</p>
+                    <p>that players and technicians to check the underlying code, submit vulnerabilities and give solutions.</p>
+                    <p>If you want to learn more information,</p>
+                    <p>please visit: <a href="https://github.com/IkaroInory/MinecraftCommandEditor" target="_blank">github.com</a></p>
+                </section>
+            </div>
+        </div>
+
+
+        <style>
+            .label-label {
+                display: block;
+            }
+            .div-input {
+                text-align: left;
+
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .textbox {
+                box-sizing: border-box;
+
+                width: 100%;
+                height: 38px;
+                border-radius: 5px;
+
+                padding-left: 15px;
+
+                color: white;
+                font-size: 18px;
+                font-weight: 400;
+            }
+            #submit {
+                width: 100%;
+                height: 42px;
+                background-color: rgb(55, 175, 101);
+                border-style: none;
+            }
+            #span-submit {
+                font-size: 20px;
+                font-family: "Roboto", sans-serif;
+                color: white;
+            }
+            #div-login {
+                position: fixed;
+                text-align: center;
+
+                width: 35rem;
+                height: 40rem;
+
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                background-color: rgba(51, 51, 51, 0.7);
+                padding: 64px;
+                border-radius: 10px;
+
+                color: white;
+                font-size: 20px;
+                font-weight: 400;
+
+                padding-top: 90px;
+
+                animation: fade-in;
+                animation-duration: 0.5s;
+            }
+
+            @keyframes fade-in {
+                0% {
+                    opacity: 0;
+                }
+                40% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        </style>
+        
+        <div id="div-login" style="display: none;">
+            <form id="form" action="https://www.freecodecamp.org/email-submit">
+                <div class="div-input">
+                    <!--需求10：#email 输入框应使用 HTML5 验证来确认输入的内容是否为邮箱。-->
+                    <label id="email-label" class="label-label" for="email">Account</label>
+                    <input id="email" class="textbox" type="email" placeholder="Enter your Email" required>
+                </div>
+                <div class="div-input">
+                    <label id="password-label" class="label-label" for="password">Password</label>
+                    <input id="password" class="textbox" type="password" placeholder="Enter your Password" required>
+                </div>
+                <div class="div-input">
+                    <button id="submit" type="submit"><span id="span-submit">Log In</span></button>
+                </div>
+            </form>
         </div>
     </body>
 </html>

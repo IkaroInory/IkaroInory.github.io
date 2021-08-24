@@ -15,6 +15,33 @@
 
             var randomIndex = Math.round(Math.random() * 4);
             document.write("<style>body{background-image:url(" + background[randomIndex] + ")}</style>");
+
+            function showTime() {
+                var date = new Date();
+                var now = "";
+                now = "GMT+8, " + date.getFullYear() + "-";
+                now = now + (date.getMonth() + 1) + "-";
+                now = now + date.getDate();
+                now = now + " ";
+
+                if (date.getHours() < 10) {
+                    now = now + "0" + date.getHours() + ":";
+                } else {
+                    now = now + date.getHours() + ":";
+                }
+                if (date.getMinutes() < 10) {
+                    now = now + "0" + date.getMinutes() + ":";
+                } else {
+                    now = now + date.getMinutes() + ":";
+                }
+                if (date.getSeconds() < 10) {
+                    now = now + "0" + date.getSeconds();
+                } else {
+                    now = now + date.getSeconds();
+                }
+                document.getElementById("nowTime").innerHTML = now;
+                setTimeout("show()", 1000);
+            }
         </script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 
@@ -25,6 +52,7 @@
 
         <style>
             body {
+                background-color: rgb(51, 51, 51);
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: 1920px 1080px;
@@ -33,8 +61,14 @@
                 font-weight: 400;
                 margin: 0;
             }
-            a{
+            a {
                 text-decoration: none;
+            }
+            .a-link:link {
+                color: #008CBA;
+            }
+            .a-link:visited {
+                color: #008CBA;
             }
             .nav-link {
                 color: white;
@@ -74,33 +108,40 @@
             #div-container {
                 color: white;
                 font-weight: 400;
+                margin-bottom: 64px;
+            }
+            #div-header{
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
             }
         </style>
     </head>
 
-    <body>
+    <body onload="showTime()">
         <div id="div-body">
-            <header id="header">
-                <div id="div-functions" style="height: 32px;">
-                    <img id="header-img" src="https://raw.githubusercontent.com/IkaroInory/IkaroInory.github.io/main/Image%20Host/Minecraft%20Command%20Editor/wiki-icon.png">
-                    <nav id="nav-bar">
-                        <a class="nav-link">Minecraft Command Editor</a>
-                        <a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a>
-                        <a class="nav-link" href="#"><i class="fa fa-flag"></i> Guide</a>
-                        <a class="nav-link" href="#index-download"><i class="fa fa-cloud-download"></i> Download</a>
-                        <a class="nav-link" href="#"><i class="fa fa-globe"></i> Language</a>
-                        <a class="nav-link" href="#index-github"><i class="fa fa-github"></i> GitHub</a>
-                    </nav>
-                </div>
-                <!--需求5：当点击 nav 内的 .nav-link 按钮时，应滚动到产品主页上相应的部分。-->
-                <div id="div-account">
-                    <nav id="nav-account">
-                        <a id="bar-signup" class="nav-link" href="#" style="background-color: rgb(55, 175, 101);padding-top: 8px;padding-bottom: 8px;">Sign Up</a>
-                        <a id="bar-login" class="nav-link" href="javascript:void(0)" onclick="openLogin()">Log In</a>
-                    </nav>
-                </div>
-            </header>
-
+            <div id="div-header">
+                <header id="header">
+                    <div id="div-functions" style="height: 32px;">
+                        <img id="header-img" src="https://raw.githubusercontent.com/IkaroInory/IkaroInory.github.io/main/Image%20Host/Minecraft%20Command%20Editor/wiki-icon.png">
+                        <nav id="nav-bar">
+                            <a class="nav-link">Minecraft Command Editor</a>
+                            <a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a>
+                            <a class="nav-link" href="#"><i class="fa fa-flag"></i> Guide</a>
+                            <a class="nav-link" href="#index-download"><i class="fa fa-cloud-download"></i> Download</a>
+                            <a class="nav-link" href="#"><i class="fa fa-globe"></i> Language</a>
+                            <a class="nav-link" href="#index-github"><i class="fa fa-github"></i> GitHub</a>
+                        </nav>
+                    </div>
+                    <!--需求5：当点击 nav 内的 .nav-link 按钮时，应滚动到产品主页上相应的部分。-->
+                    <div id="div-account">
+                        <nav id="nav-account">
+                            <a id="bar-signup" class="nav-link" href="#" style="background-color: rgb(55, 175, 101);padding-top: 8px;padding-bottom: 8px;">Sign Up</a>
+                            <a id="bar-login" class="nav-link" href="javascript:void(0)" onclick="openLogin()">Log In</a>
+                        </nav>
+                    </div>
+                </header>
+            </div>
             
             <script>
                 function openLogin(){
@@ -137,7 +178,7 @@
                 <h1 id="index-download" style="text-align: center;">Download</h1>
                 <section style="text-align: center;">
                     <p>If you want to learn more information about Minecraft Command Editor,</p>
-                    <p>please visit: <a href="http://www.mcbbs.net/thread-802231-1-1.html" target="_blank">www.mcbbs.net</a></p>
+                    <p>please visit: <a class="a-link" href="http://www.mcbbs.net/thread-802231-1-1.html" target="_blank">www.mcbbs.net</a></p>
                 </section>
                 <hr width="60%">
                 <h1 id="index-github" style="text-align: center;">GitHub Repositories</h1>
@@ -146,7 +187,7 @@
                     <p>and hosted it in the GitHub repositoriesfor</p>
                     <p>that players and technicians to check the underlying code, submit vulnerabilities and give solutions.</p>
                     <p>If you want to learn more information,</p>
-                    <p>please visit: <a href="https://github.com/IkaroInory/MinecraftCommandEditor" target="_blank">github.com</a></p>
+                    <p>please visit: <a class="a-link" href="https://github.com/IkaroInory/MinecraftCommandEditor" target="_blank">github.com</a></p>
                 </section>
             </div>
         </div>
@@ -241,4 +282,11 @@
             </form>
         </div>
     </body>
+
+    <footer>
+        <div style="text-align: center;font-size: 12px;color: white;">
+            <p>© 2019-2021 IkaroInory | Minecraft Command Editor</p>
+            <div id="nowTime"></div>
+        </div>
+    </footer>
 </html>

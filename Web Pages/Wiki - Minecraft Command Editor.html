@@ -2,49 +2,9 @@
 
 <html>
     <head>
-        <title>Minecraft Command Editor</title>
+        <title>Wiki - Minecraft Command Editor</title>
         <link rel="shortcut icon" href="https://raw.githubusercontent.com/IkaroInory/IkaroInory.github.io/main/Image%20Host/Minecraft%20Command%20Editor/wiki-icon.png" />
-
-        <script type="text/javascript">
-            var background = [];
-            background[0] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4364.JPG";
-            background[1] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4365.JPG";
-            background[2] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4366.JPG";
-            background[3] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4367.JPG";
-            background[4] = "https://ikaroinory.github.io/Image%20Host/wallpaper/4k/IMG_4368.JPG";
-
-            var randomIndex = Math.round(Math.random() * 4);
-            document.write("<style>body{background-image:url(" + background[randomIndex] + ")}</style>");
-
-            function showTime() {
-                var date = new Date();
-                var now = "";
-                now = "GMT+8, " + date.getFullYear() + "-";
-                now = now + (date.getMonth() + 1) + "-";
-                now = now + date.getDate();
-                now = now + " ";
-
-                if (date.getHours() < 10) {
-                    now = now + "0" + date.getHours() + ":";
-                } else {
-                    now = now + date.getHours() + ":";
-                }
-                if (date.getMinutes() < 10) {
-                    now = now + "0" + date.getMinutes() + ":";
-                } else {
-                    now = now + date.getMinutes() + ":";
-                }
-                if (date.getSeconds() < 10) {
-                    now = now + "0" + date.getSeconds();
-                } else {
-                    now = now + date.getSeconds();
-                }
-                document.getElementById("nowTime").innerHTML = now;
-                setTimeout("show()", 1000);
-            }
-        </script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,40 +12,37 @@
 
         <style>
             body {
-                background-color: rgb(51, 51, 51);
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: 1920px 1080px;
+                height: 100%;
                 font-family: "Roboto", sans-serif;
+                margin: 0;
+
                 font-size: 16px;
                 font-weight: 400;
-                margin: 0;
             }
             a {
                 text-decoration: none;
             }
+            /**********************************************/
             .a-link:link {
                 color: #008CBA;
             }
             .a-link:visited {
                 color: #008CBA;
             }
-            .nav-link {
-                color: white;
-                font-weight: 400;
-                height: 32px;
-                padding-left: 16px;
-                padding-right: 16px;
-                margin: -16px 0;
+            /**********************************************/
+            #div-header {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
             }
             #header {
                 display: flex;
                 justify-content: space-between;
                 background-color: rgb(51, 51, 51);
-
+    
                 width: auto;
                 height: 32px;
-
+    
                 padding: 16px 32px;
             }
             #div-functions {
@@ -100,201 +57,306 @@
             #nav-bar {
                 margin-left: 16px;
             }
+            .bar-link {
+                color: white;
+                font-weight: 400;
+                height: 32px;
+                padding-left: 16px;
+                padding-right: 16px;
+                margin: -16px 0;
+            }
             #div-account {
                 display: flex;
                 align-items: center;
                 height: 32px;
             }
-            #div-container {
-                color: white;
-                font-weight: 400;
-                margin-bottom: 64px;
-            }
-            #div-header{
-                position: sticky;
-                position: -webkit-sticky;
-                top: 0;
-            }
             #bar-signup {
                 background-color: rgb(55, 175, 101);
-
+    
                 padding-top: 8px;
                 padding-bottom: 8px;
-
+    
                 border-radius: 5px;
+            }
+            /**********************************************/
+            #navbar {
+                position: fixed;
+                min-width: 290px;
+                top: 64px;
+                left: 0px;
+                width: 297px;
+                height: 100%;
+                border-right: 3px solid;
+                border-color: rgba(0, 22, 22, 0.4);
+            }
+            #header-nav-title {
+                padding: 16px 32px;
+                border-bottom: 2px solid;
+                border-color: rgba(0, 22, 22, 0.4);
+                font-size: 36px;
+            }
+            #navbar ul {
+                margin-top: 0px;
+                padding-left: 0px;
+                height: 100%;
+            }
+            #navbar li {
+                padding: 16px 32px;
+
+                color: #4d4e53;
+                border-bottom: 1px solid;
+                border-color: rgba(0, 22, 22, 0.4);
+            }
+            #navbar a {
+                display: block;
+                padding: 10px, 30px;
+                color: #4d4e53;
+                text-decoration: none;
+            }
+            /**********************************************/
+            .target-fix {
+                position: relative;
+                top: -44px;
+                display: block;
+                height: 0;
+                overflow: hidden;
+            }
+            #main-doc {
+                margin-bottom: 16px;
+                margin-left: 300px;
+                margin-right: 64px;
+                padding-left: 64px;
+            }
+            .main-section {
+                padding: 16px 32px;
+                border-bottom: 1px solid;
+            }
+            .main-section header {
+                margin-top: 16px;
+                margin-bottom: 16px;
+                font-size: 32px;
+                font-weight: 700;
+            }
+            .main-section p {
+                padding-left: 16px;
+            }
+            .main-section table {
+                margin-top: 16px;
+                margin-bottom: 16px;
+                padding-left: 32px;
+            }
+            .main-section tr {
+                height: 34px;
+            }
+            .main-section li {
+                margin-top: 16px;
+                margin-bottom: 16px;
             }
         </style>
     </head>
 
-    <body onload="showTime()">
-        <div id="div-body">
-            <div id="div-header">
-                <header id="header">
-                    <div id="div-functions" style="height: 32px;">
-                        <img id="header-img" src="https://raw.githubusercontent.com/IkaroInory/IkaroInory.github.io/main/Image%20Host/Minecraft%20Command%20Editor/wiki-icon.png">
-                        <nav id="nav-bar">
-                            <a class="nav-link">Minecraft Command Editor</a>
-                            <a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a>
-                            <a class="nav-link" href="#"><i class="fa fa-flag"></i> Guide</a>
-                            <a class="nav-link" href="#index-download"><i class="fa fa-cloud-download"></i> Download</a>
-                            <a class="nav-link" href="#"><i class="fa fa-globe"></i> Language</a>
-                            <a class="nav-link" href="#index-github"><i class="fa fa-github"></i> GitHub</a>
-                        </nav>
-                    </div>
-                    <div id="div-account">
-                        <nav id="nav-account">
-                            <a id="bar-signup" class="nav-link" href="#">Sign Up</a>
-                            <a id="bar-login" class="nav-link" href="javascript:void(0)" onclick="openLogin()">Log In</a>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            
-            <script>
-                function openLogin(){
-                    document.getElementById("div-login").style.display = "block";
-                    return false;
-                }
-            </script>
-            
-
-            <style>
-                #section-welcome {
-                    text-align: center;
-                    font-size: 20px;
-                    line-height: 20px;
-                }
-            </style>
-            <div id="div-container">
-                <h1 style="text-align: center;">Minecraft Command Editor</h1>
-                <section id="section-welcome">
-                    <p>Welcome to <strong>Minecraft Command Editor</strong> official website!</p>
-                    <p>The current page is under construction and some functions are not available yet. We will hurry to finish the website.</p>
-                    <p>Thank you for your support!</p>
-                </section>
-                <hr width="60%">
-                <h1 style="text-align: center;">What is MCE?</h1>
-                <section style="text-align: center;">
-                    <iframe id="video" src="" width="800" height="450"></iframe>
-                    <p>Minecraft Command Editor is a software dedicated to advanced editing of Minecraft commands, wrote by IkaroInory.</p>
-                    <p>At present, it is still updating.</p>
-                    <p>More functions will be introduced one after another.</p>
-                    <p>Please look forward to it!</p>
-                </section>
-                <hr width="60%">
-                <h1 id="index-download" style="text-align: center;">Download</h1>
-                <section style="text-align: center;">
-                    <p>If you want to learn more information about Minecraft Command Editor,</p>
-                    <p>please visit: <a class="a-link" href="http://www.mcbbs.net/thread-802231-1-1.html" target="_blank">www.mcbbs.net</a></p>
-                </section>
-                <hr width="60%">
-                <h1 id="index-github" style="text-align: center;">GitHub Repositories</h1>
-                <section style="text-align: center;">
-                    <p>Since version 3.0, MCE has started to open source code</p>
-                    <p>and hosted it in the GitHub repositoriesfor</p>
-                    <p>that players and technicians to check the underlying code, submit vulnerabilities and give solutions.</p>
-                    <p>If you want to learn more information,</p>
-                    <p>please visit: <a class="a-link" href="https://github.com/IkaroInory/MinecraftCommandEditor" target="_blank">github.com</a></p>
-                </section>
-            </div>
+    <body>
+        <div id="div-header">
+            <header id="header">
+                <div id="div-functions" style="height: 32px;">
+                    <img id="header-img" src="https://raw.githubusercontent.com/IkaroInory/IkaroInory.github.io/main/Image%20Host/Minecraft%20Command%20Editor/wiki-icon.png">
+                    <nav id="nav-bar">
+                        <a class="bar-link">Minecraft Command Editor</a>
+                        <a class="bar-link" href="#"><i class="fa fa-home"></i> Home</a>
+                        <a class="bar-link" href="#"><i class="fa fa-flag"></i> Guide</a>
+                        <a class="bar-link" href="#index-download"><i class="fa fa-cloud-download"></i> Download</a>
+                        <a class="bar-link" href="#"><i class="fa fa-globe"></i> Language</a>
+                        <a class="bar-link" href="#index-github"><i class="fa fa-github"></i> GitHub</a>
+                    </nav>
+                </div>
+                <div id="div-account">
+                    <nav id="nav-account">
+                        <a id="bar-signup" class="bar-link" href="#">Sign Up</a>
+                        <a id="bar-login" class="bar-link" href="javascript:void(0)" onclick="openLogin()">Log In</a>
+                    </nav>
+                </div>
+            </header>
         </div>
 
-
-        <style>
-            .label-label {
-                display: block;
-            }
-            .div-input {
-                text-align: left;
-
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-            .textbox {
-                box-sizing: border-box;
-
-                width: 100%;
-                height: 38px;
-                border-radius: 5px;
-
-                padding-left: 15px;
-
-                color: white;
-                font-size: 18px;
-                font-weight: 400;
-            }
-            #submit {
-                width: 100%;
-                height: 42px;
-                background-color: rgb(55, 175, 101);
-                border-style: none;
-            }
-            #span-submit {
-                font-size: 20px;
-                font-family: "Roboto", sans-serif;
-                color: white;
-            }
-            #div-login {
-                position: fixed;
-                text-align: center;
-
-                width: 35rem;
-                height: 40rem;
-
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-
-                background-color: rgba(51, 51, 51, 0.7);
-                padding: 64px;
-                border-radius: 10px;
-
-                color: white;
-                font-size: 20px;
-                font-weight: 400;
-
-                padding-top: 90px;
-
-                animation: fade-in;
-                animation-duration: 0.5s;
-            }
-
-            @keyframes fade-in {
-                0% {
-                    opacity: 0;
-                }
-                40% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
-        </style>
-        
-        <div id="div-login" style="display: none;">
-            <h2>Log In MCE Account</h2>
-            <form id="form" action="https://www.freecodecamp.org/email-submit">
-                <div class="div-input">
-                    <!--需求10：#email 输入框应使用 HTML5 验证来确认输入的内容是否为邮箱。-->
-                    <label id="email-label" class="label-label" for="email">Account</label>
-                    <input id="email" class="textbox" type="email" placeholder="Enter your Email" required>
-                </div>
-                <div class="div-input">
-                    <label id="password-label" class="label-label" for="password">Password</label>
-                    <input id="password" class="textbox" type="password" placeholder="Enter your Password" required>
-                </div>
-                <div class="div-input">
-                    <button id="submit" type="submit"><span id="span-submit">Log In</span></button>
-                </div>
-            </form>
-        </div>
+        <nav id="navbar">
+            <header id="header-nav-title"><i class="fa fa-codepen"></i> MCE Wiki</header>
+            <ul type="none">
+                <li>
+                    <a class="nav-link" href="#Navigation"><i class="fa fa-wikipedia-w"></i> Navigation</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Introduction"><i class="fa fa-angle-double-right"></i> Introduction</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Download"><i class="fa fa-cloud-download"></i> Download</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Update_Log"><i class="fa fa-list"></i> Update Log</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Others">Others</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Contact_Us"><i class="fa fa-comments-o"></i> Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <!--需求6：所有.main-section元素内总计应有5个 code 元素-->
+            <a class="target-fix" name="Navigation"></a>
+            <section class="main-section" id="_Navigation">
+                <header><i class="fa fa-wikipedia-w"></i> Navigation</header>
+                <p>Welcome to Minecraft Command Editor Wiki, the MCE offical technical manual and use document.</p>
+                <p>If you are interested, you can edit the Minecraft Command Editor Wiki with us.</p>
+                <br>
+                <p>Since 2019, MCE Wiki team has been committed to multilingual development. </p>
+                <p>Up to now, MCE Wiki team has roughly completed the translation of Traditional Chinese(Taiwan), English(US), and German(Deutschland.)</p>
+                <p>Due to the large amount of translation tasks, if there are erros in the document, please contact us to submit the error.</p>
+                <p>Thank you!</p>
+            </section>
+            <a class="target-fix" name="Introduction"></a>
+            <section class="main-section" id="_Introduction">
+                <header><i class="fa fa-angle-double-right"></i> Introduction</header>
+                <p>Minecraft Command Editor is a software dedicated to advanced editing of Minecraft commands.</p>
+            </section>
+            <a class="target-fix" name="Download"></a>
+            <section class="main-section" id="_Download">
+                <header><i class="fa fa-cloud-download"></i> Download</header>
+                <p>Minecraft Command Editor was first released in <i class="fa fa-link"></i> <a class="a-link" href="https://www.mcbbs.net/" target="_blank">mcbbs.net</a>. Post: <i class="fa fa-link"></i> <a class="a-link" href="https://www.mcbbs.net/thread-802231-1-1.html" target="_blank">Click me!</a></p>
+                <p>Also can visit GitHub: <i class="fa fa-link"></i> <a class="a-link" href="https://github.com/IkaroInory/MinecraftCommandEditor" target="_blank">Click me!</a></p>
+                <br>
+                <p>Version record and release date:</p>
+                <table style="width: 320px;">
+                    <tr>
+                        <td>MCE 1.0.0.630_base</td>
+                        <td>2018-06-30</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.0.1.701_base</td>
+                        <td>2018-07-01</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.1.0.707_alpha</td>
+                        <td>2018-07-07</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.2.0.720_alpha</td>
+                        <td>2018-07-20</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.2.1.721_alpha</td>
+                        <td>2018-07-21</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.2.2.724_alpha</td>
+                        <td>2018-07-24</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.2.3.726_alpha</td>
+                        <td>2018-07-26</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.0.802_beta</td>
+                        <td>2018-08-02</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.1.802_beta</td>
+                        <td>2018-08-02</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.2.803_beta</td>
+                        <td>2018-08-03</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.3.805_beta</td>
+                        <td>2018-08-05</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.4.807_beta</td>
+                        <td>2018-08-07</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.5.808_beta</td>
+                        <td>2018-08-08</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.6.908_beta</td>
+                        <td>2018-09-08</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 1.3.7.1013_beta</td>
+                        <td>2018-10-13</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 2.0.0</td>
+                        <td>2019-01-14</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 2.0.1</td>
+                        <td>2019-01-21</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 2.0.2</td>
+                        <td>2019-07-07</td>
+                    </tr>
+                    <tr>
+                        <td>MCE 3.0.0</td>
+                        <td>Updating...</td>
+                    </tr>
+                </table>
+            </section>
+            <a class="target-fix" name="Update_Log"></a>
+            <section class="main-section" id="_Update_Log">
+                <header><i class="fa fa-list"></i> Update Log</header>
+                <span style="font-size:20px">Minecraft Command Editor 2.0.1</span>
+                <ul>
+                    <li>Give Items.accdb has been entered;</li>
+                    <li>Added help button to the 'Give Items' page;</li>
+                    <li>Added Minecraft Command Editor Wiki;</li>
+                    <li>Deleted the 'Install MCELib.exe' button from the 'Settings - Support Lib' page;</li>
+                    <li>Deleted the 'MCELib.version' key from the version.config;</li>
+                    <li>Repaired no pop-up MessageBox that reminder register Microsoft.ACE.OLEDB.12.0 at the first boot;</li>
+                    <li>Repaired Global Config.config;</li>
+                    <li>Repaired program initialization function code;</li>
+                    <li>Corrected lang files;</li>
+                    <li>Corrected update log.</li>
+                </ul>
+                <span style="font-size:20px">Minecraft Command Editor 2.0.0</span>
+                <ul>
+                    <li>Complete migration of all code from c# based on Microsoft .Net Framework;</li>
+                    <li>Use Microsoft Office Access to store data, most of the data migration has been completed, the original database will no longer be reserved for users;</li>
+                    <li>Added logo animation and loading tips in the 'Loading' page;</li>
+                    <li>Added 'Settings' page;</li>
+                    <li>Added multi-language function;</li>
+                    <li>Added error message pop-up;</li>
+                    <li>Added enchantment level limit, the scope is [-32768, 32767] (Thanks for @风扇滑翔翼 's offer);</li>
+                    <li>Added \tools folder, with Minecraft Command Editor auxiliary tools;</li>
+                    <li>Support lore multi-color(Thanks for @荧光谷主 's offer);</li>
+                    <li>Modify the layout of 'Home' page;</li>
+                    <li>Modify the layout of 'Give Items' and 'Status Effect' page, and integrate functionality for MC1.12.2- and MC1.13+ ;</li>
+                    <li>Modify the Toast tip to the message box that used System.Windows.Forms.MessageBox.Show() function;</li>
+                    <li>Modify the text layout of the update log;</li>
+                    <li>Deleted the 'Give Skulls' page;</li>
+                    <li>Deleted MCELib.exe;</li>
+                    <li>Deleted stringManipulation.dll;</li>
+                    <li>Optimizing Start-up Speed;</li>
+                    <li>Repaired Minimizing windows be restored cause flashback;</li>
+                    <li>Repaired Minimizing 'Search' window have a blank title;</li>
+                    <li>Repair Antivirus Software Malicious Reporting.</li>
+                </ul>
+            </section>
+            <a class="target-fix" name="Others"></a>
+            <section class="main-section" id="_Others">
+                <header>Others</header>
+            </section>
+            <a class="target-fix" name="Contact_Us"></a>
+            <section class="main-section" id="_Contact_Us">
+                <header><i class="fa fa-comments-o"></i> Contact Us</header>
+                <p><i class="fa fa-at"></i> Email: wiki@mce.oi</p>
+                <p><i class="fa fa-twitter"></i> Twitter: mce_official</p>
+                <p><i class="fa fa-youtube-play"></i></i> YouTube: Not yet open!</p>
+                <p><i class="fa fa-globe"></i> Websit: https://wiki.mce.oi</p>
+            </section>
+        </main>
     </body>
-
-    <footer>
-        <div style="text-align: center;font-size: 12px;color: white;">
-            <p>© 2019-2021 IkaroInory | Minecraft Command Editor</p>
-            <div id="nowTime"></div>
-        </div>
-    </footer>
 </html>
